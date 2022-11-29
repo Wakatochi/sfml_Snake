@@ -12,3 +12,8 @@ MineSweeper.vcxproj.FileListAbsolute.txt
 *.ipdb
 *.pdb
 *.idb
+*.vsidx
+*.vsidx
+.vs/Snake/v17/.suo
+*.db
+*.ipch
