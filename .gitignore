@@ -1,0 +1,14 @@
+MineSweeper.vcxproj
+MineSweeper.vcxproj.filters
+MineSweeper.vcxproj.user
+MineSweeper.vcxproj.FileListAbsolute.txt
+.vs/*
+*.iobj
+*.obj
+*.exe
+*.exe.recipe
+*.ilk
+*.log
+*.ipdb
+*.pdb
+*.idb
