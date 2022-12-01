@@ -14,7 +14,7 @@ TODO:
 
 Loose condition:
 Snake head touches its own body.
-Snake head touches an obticle.
+Snake head touches an obsticle.
 
 Win condition:
 None. Game goes on until the snake dies.
