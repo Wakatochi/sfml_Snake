@@ -2,7 +2,7 @@
 Snake game. C++, SFML library.
 Dynamic allocated snake size i.e the snake is growing in runtime until RAM is used up.
 
-Project for learning SFML library and for C++ pointer allokation training. No memory leaks.
+Project for learning SFML library and for C++ pointer allocation training. No memory leaks.
 
 TODO:
 1. New sprites for pellets(food that makes the snake grow).
