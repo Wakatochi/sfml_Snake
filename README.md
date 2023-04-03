@@ -12,7 +12,7 @@ TODO:
 5. Music and sound.
 6. HUD for points and maybe time.
 
-Loose condition:
+Lose condition:
 Snake head touches its own body.
 Snake head touches an obsticle.
 
