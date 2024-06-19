@@ -115,7 +115,6 @@ GameHandler::loadResource()
    m_bgSprite.setTexture(m_bgTexture);
 
    m_font.loadFromFile("Resources\\Fonts\\Retro Stereo Wide.ttf");
-
 }
 
 void
