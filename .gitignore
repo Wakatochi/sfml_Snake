@@ -2,7 +2,7 @@ MineSweeper.vcxproj
 MineSweeper.vcxproj.filters
 MineSweeper.vcxproj.user
 MineSweeper.vcxproj.FileListAbsolute.txt
-.vs/*
+*.vs/*
 *.iobj
 *.obj
 *.exe
