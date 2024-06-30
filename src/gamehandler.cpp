@@ -46,6 +46,7 @@ GameHandler::GameHandler(RenderWindow* window)
    m_scoreHandler.initText(m_font);
 
    m_gameState = GAMESTATE::GAME_RUN;
+   m_music.play();
 }
 
 GameHandler::~GameHandler()
@@ -115,6 +116,14 @@ GameHandler::loadResource()
    m_bgSprite.setTexture(m_bgTexture);
 
    m_font.loadFromFile("Resources\\Fonts\\Retro Stereo Wide.ttf");
+
+   m_pelletsBuffer.loadFromFile("Resources\\Sound\\mixkit-sci-fi-positive-notification-266.flac");
+   m_sound.setBuffer(m_pelletsBuffer);
+
+   m_gameOverBuffer.loadFromFile("Resources\\Sound\\mixkit-sci-fi-positive-notification-266.flac");
+
+   m_music.openFromFile("Resources\\Sound\\Life_Stream.flac");
+   m_music.setLoop(true);
 }
 
 void
@@ -182,6 +191,9 @@ GameHandler::CheckCollition()
    {
       if(CircleCollition(head, m_pellets[i]->getXpos(), m_pellets[i]->getYpos(), m_pellets[i]->getRadius()))
       {
+         m_sound.setBuffer(m_pelletsBuffer);
+         m_sound.play();
+
          float x = static_cast<float>(rand() % Const_Window::WINDOW_WIDTH);
          float y = static_cast<float>(rand() % Const_Window::WINDOW_HEIGHT);
          m_pellets[i]->setPos(x, y);
@@ -198,6 +210,9 @@ GameHandler::CheckCollition()
    {
       if(CircleCollition(head, m_snakeHand.getSnakeBody(i).getXpos(), m_snakeHand.getSnakeBody(i).getYpos(), m_snakeHand.getSnakeBody(i).getRadius()))
       {
+         m_sound.setBuffer(m_gameOverBuffer);
+         m_sound.play();
+
          m_scoreHandler.resetScore();
          m_snakeHand.die();
       }

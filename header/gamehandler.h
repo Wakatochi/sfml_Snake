@@ -3,6 +3,7 @@
 #define GAMEHANDLER_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "snakehandler.h"
 #include "pellets.h"
 #include "scorehandler.h"
@@ -35,8 +36,11 @@ class GameHandler
       Font m_font;
       Texture m_bgTexture;
       Sprite m_bgSprite;
+      SoundBuffer m_pelletsBuffer;
+      SoundBuffer m_gameOverBuffer;
+      Sound m_sound;
+      Music m_music;
       Clock m_currentClock;
-
       GAMESTATE m_gameState;
       SnakeHandler m_snakeHand;
       ScoreHandler m_scoreHandler;
