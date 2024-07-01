@@ -3,6 +3,7 @@
 #define GAMEHANDLER_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "snakehandler.h"
 #include "pellets.h"
 #include "scorehandler.h"
@@ -22,11 +23,12 @@ class GameHandler
    private:
       enum class GAMESTATE
       {
-         GAME_INIT = 0,
-         GAME_MENU = 1,
-         GAME_RUN  = 2,
-         GAME_PAUS = 3,
-         GAME_QUIT = 4
+         GAME_INIT  = 0,
+         GAME_MENU  = 1,
+         GAME_RUN   = 2,
+         GAME_PAUS  = 3,
+         GAME_DYING = 4,
+         GAME_QUIT  = 5
       };
 
       int m_nrOfPellets;
@@ -35,8 +37,11 @@ class GameHandler
       Font m_font;
       Texture m_bgTexture;
       Sprite m_bgSprite;
+      SoundBuffer m_pelletsBuffer;
+      SoundBuffer m_gameOverBuffer;
+      Sound m_sound;
+      Music m_music;
       Clock m_currentClock;
-
       GAMESTATE m_gameState;
       SnakeHandler m_snakeHand;
       ScoreHandler m_scoreHandler;

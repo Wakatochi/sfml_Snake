@@ -19,6 +19,7 @@ class SnakeHandler
       void addSpeed(float speed);
       void addBody();
       void die();
+      void resetSnake();
 
       Snake getSnakeHead() const;
       Snake getSnakeBody(int index) const;
@@ -59,8 +60,6 @@ class SnakeHandler
       Texture m_texture;
 
       float normalize(float angle);
-
-      void resetSnake();
 };
 
 #endif
