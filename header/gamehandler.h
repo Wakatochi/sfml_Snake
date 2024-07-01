@@ -23,11 +23,12 @@ class GameHandler
    private:
       enum class GAMESTATE
       {
-         GAME_INIT = 0,
-         GAME_MENU = 1,
-         GAME_RUN  = 2,
-         GAME_PAUS = 3,
-         GAME_QUIT = 4
+         GAME_INIT  = 0,
+         GAME_MENU  = 1,
+         GAME_RUN   = 2,
+         GAME_PAUS  = 3,
+         GAME_DYING = 4,
+         GAME_QUIT  = 5
       };
 
       int m_nrOfPellets;

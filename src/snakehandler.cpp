@@ -340,7 +340,7 @@ SnakeHandler::addBody()
 void
 SnakeHandler::die()
 {
-   resetSnake();
+//   resetSnake();
 
    m_angle = 0.0f;
    m_currSpeed = START_SPEED;
