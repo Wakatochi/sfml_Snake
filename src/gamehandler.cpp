@@ -89,7 +89,7 @@ GameHandler::Update()
    {
       while(m_sound.getStatus() == sf::Sound::Playing)
       {
-         
+         // Do nothing
       }
 
       m_snakeHand.resetSnake();

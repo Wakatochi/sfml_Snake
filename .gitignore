@@ -30,3 +30,4 @@ Snake
 *.mp3
 *.wav
 /Snake/x64/Release/Snake.tlog
+*.aps
