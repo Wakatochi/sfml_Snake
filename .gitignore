@@ -2,7 +2,9 @@ Snake.vcxproj
 Snake.vcxproj.filters
 Snake.vcxproj.user
 Snake.vcxproj.FileListAbsolute.txt
-*.vs
+.vs
+x64
+Snake
 *.iobj
 *.obj
 *.exe
