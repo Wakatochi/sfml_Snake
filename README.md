@@ -9,7 +9,6 @@ TODO:
 2. Obsticles that will kill the snake.
 3. Main menu.
 4. In game menu.
-5. Music and sound.
 6. HUD for points and maybe time.
 
 Lose condition:
