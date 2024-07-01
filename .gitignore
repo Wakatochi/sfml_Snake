@@ -1,8 +1,8 @@
-MineSweeper.vcxproj
-MineSweeper.vcxproj.filters
-MineSweeper.vcxproj.user
-MineSweeper.vcxproj.FileListAbsolute.txt
-*.vs/*
+Snake.vcxproj
+Snake.vcxproj.filters
+Snake.vcxproj.user
+Snake.vcxproj.FileListAbsolute.txt
+*.vs
 *.iobj
 *.obj
 *.exe
