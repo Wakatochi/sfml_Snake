@@ -31,7 +31,7 @@ Snake
 *.wav
 /Snake/x64/Release/Snake.tlog
 *.aps
-/Release_Bin/doc/gdd.aux
-/Release_Bin/doc/gdd.out
-/Release_Bin/doc/gdd.pdf
-/Release_Bin/doc/gdd.toc
+*.aux
+*.out
+*.pdf
+*.toc
