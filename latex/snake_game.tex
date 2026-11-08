@@ -102,12 +102,6 @@ The project intentionally uses an older C++ memory-allocation style for training
 \subsubsection{Body Following the Head}
 Each body part follows the previous part using the following calculation:
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image4.png}
-	\caption{Body-following diagram.}
-\end{figure}
-
 \begin{verbatim}
 dx = Head->getXpos() - body->getXpos();
 dy = Head->getYpos() - body->getYpos();
@@ -122,12 +116,6 @@ The next body part uses the same calculation, but uses the position of the previ
 \subsubsection{Head Rotation}
 The head is steered using the following calculation:
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image5.png}
-	\caption{Head rotation diagram.}
-\end{figure}
-
 \begin{verbatim}
 angle = angle + RotationSpeed;
 
@@ -140,41 +128,17 @@ yPos = yPos + xVel;
 
 The sign of \texttt{RotationSpeed} depends on player input. Right input applies positive rotation and left input applies negative rotation.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/unitcircle.png}
+	\caption{The unit circle. Note that it is inverted since 'y' increase downwards}
+\end{figure}
+
 \subsubsection{Circular Collisions}
 Circular collision detection is used for objects such as the snake and pellets.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image6.png}
-	\caption{Circular collision diagram.}
-\end{figure}
-
 \subsubsection{Circle Against Box Collisions}
 Circle-against-box collision detection is intended for collisions between circular game objects and rectangular obstacles.
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image7.png}
-	\caption{Circle-against-box collision diagram.}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image8.png}
-	\caption{Additional collision reference diagram.}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image9.png}
-	\caption{Additional collision reference diagram.}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{latex/images/image10.png}
-	\caption{Additional collision reference diagram.}
-\end{figure}
 
 \section{Development Task List}
 \begin{itemize}

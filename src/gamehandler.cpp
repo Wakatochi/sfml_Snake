@@ -206,13 +206,14 @@ GameHandler::CheckCollition()
          m_sound.setBuffer(m_pelletsBuffer);
          m_sound.play();
 
+         m_scoreHandler.addScore(m_pellets[i]->getValue());
+         m_snakeHand.addBody();
+         m_snakeHand.addSpeed(1.0f);
+
+         // Spawn new pellets
          float x = static_cast<float>(rand() % Const_Window::WINDOW_WIDTH);
          float y = static_cast<float>(rand() % Const_Window::WINDOW_HEIGHT);
          m_pellets[i]->setPos(x, y);
-
-         m_scoreHandler.addScore(10);
-         m_snakeHand.addBody();
-         m_snakeHand.addSpeed(0.25f);
 
          return true;
       }

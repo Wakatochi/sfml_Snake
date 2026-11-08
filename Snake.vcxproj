@@ -155,9 +155,6 @@
       <AdditionalLibraryDirectories>E:\Programing\Libraries\SFML\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>if not exist "$(SolutionDir)Release_Bin\doc" mkdir "$(SolutionDir)Release_Bin\doc" &amp; "$(LOCALAPPDATA)\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode -halt-on-error -output-directory="$(SolutionDir)Release_Bin\doc" "$(ProjectDir)latex\gdd.tex"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -192,11 +189,11 @@
       <AdditionalLibraryDirectories>E:\Programing\Libraries\SFML\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>if not exist "$(SolutionDir)Release_Bin\doc" mkdir "$(SolutionDir)Release_Bin\doc" &amp; "$(LOCALAPPDATA)\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode -halt-on-error -output-directory="$(SolutionDir)Release_Bin\doc" "$(ProjectDir)latex\gdd.tex"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="BuildLatexDocumentation" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
+    <Exec Command="call &quot;$(ProjectDir)latex\build-doc.bat&quot;" />
+  </Target>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

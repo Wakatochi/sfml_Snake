@@ -12,13 +12,13 @@ MainHandler::MainHandler()
 
 MainHandler::~MainHandler()
 {
+   delete m_game;
+   
    if(m_MainWindow != NULL)
    {
       delete m_MainWindow;
       m_MainWindow = NULL;
    }
-
-   delete m_game;
 }
 
 void

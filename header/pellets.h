@@ -24,7 +24,6 @@ class Pellets
 
    protected:
       Sprite m_sprite;
-      Texture m_texture;
       float m_size;
 
    private:
