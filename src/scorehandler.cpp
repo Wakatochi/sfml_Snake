@@ -20,7 +20,7 @@ ScoreHandler::ScoreHandler(Font& font)
 
    m_scoreText.setFont(font);
    m_scoreText.setCharacterSize(24);
-   m_scoreText.setFillColor(Color::Cyan);
+   m_scoreText.setFillColor(Color::Green);
    m_scoreText.setPosition(m_xPos, m_yPos);
 
    // DEBUG INFO
@@ -41,7 +41,7 @@ ScoreHandler::initText(Font& font)
 {
    m_scoreText.setFont(font);
    m_scoreText.setCharacterSize(12);
-   m_scoreText.setFillColor(Color::Magenta);
+   m_scoreText.setFillColor(Color::Green);
    m_scoreText.setPosition(m_xPos, m_yPos);
 
    // DEBUG INFO

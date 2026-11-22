@@ -43,7 +43,7 @@ GameHandler::GameHandler(RenderWindow* window)
       m_pellets[i] = NULL;
    }
 
-   m_scoreHandler.initText(m_font);
+   // m_scoreHandler.initText(m_font);
 
    m_gameState = GAMESTATE::GAME_RUN;
    m_music.play();
@@ -71,7 +71,8 @@ GameHandler::Update()
       HandleEvent();
 
       m_snakeHand.Update(dt.asSeconds(), (int)m_input);
-      m_scoreHandler.setAngle(m_snakeHand.getAngle());
+      m_scorePanel.setAngle(m_snakeHand.getAngle());
+//      m_scoreHandler.setAngle(m_snakeHand.getAngle());
 
       CheckCollition();
 
@@ -116,7 +117,8 @@ GameHandler::Draw()
    m_snakeHand.Draw(*m_gameWindow);
 
    // Score
-   m_scoreHandler.Draw(*m_gameWindow);
+   m_scorePanel.Draw(*m_gameWindow);
+// m_scoreHandler.Draw(*m_gameWindow);
 
    m_gameWindow->display();
 }
@@ -127,7 +129,7 @@ GameHandler::loadResource()
    m_bgTexture.loadFromFile("Resources\\Textures\\bg_earth.png");
    m_bgSprite.setTexture(m_bgTexture);
 
-   m_font.loadFromFile("Resources\\Fonts\\Retro Stereo Wide.ttf");
+//   m_font.loadFromFile("Resources\\Fonts\\Retro Stereo Wide.ttf");
 
    m_pelletsBuffer.loadFromFile("Resources\\Sound\\notification.flac");
    m_sound.setBuffer(m_pelletsBuffer);
@@ -166,6 +168,7 @@ GameHandler::HandleKeyboardEvent(const Event& event)
          {
             m_gameState = GAMESTATE::GAME_PAUS;
          }
+         // temporary solution to close the game when paused, since there is no menu implemented yet.
          else if(m_gameState == GAMESTATE::GAME_PAUS)
          {
             m_gameWindow->close();
@@ -206,7 +209,8 @@ GameHandler::CheckCollition()
          m_sound.setBuffer(m_pelletsBuffer);
          m_sound.play();
 
-         m_scoreHandler.addScore(m_pellets[i]->getValue());
+         m_scorePanel.addPoints(m_pellets[i]->getValue());
+//       m_scoreHandler.addScore(m_pellets[i]->getValue());
          m_snakeHand.addBody();
          m_snakeHand.addSpeed(1.0f);
 
@@ -230,7 +234,8 @@ GameHandler::CheckCollition()
          m_sound.setBuffer(m_gameOverBuffer);
          m_sound.play();
 
-         m_scoreHandler.resetScore();
+         m_scorePanel.resetScore();
+//       m_scoreHandler.resetScore();
          m_snakeHand.die();
       }
    }

@@ -5,19 +5,45 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "snakehandler.h"
+#include "panel.h"
 #include "pellets.h"
-#include "scorehandler.h"
+
 
 using namespace sf;
 
+/// <summary>
+/// GameHandler class is responsible for managing the game state,
+/// handling events, updating the game logic, and rendering the game objects.
+/// </summary>
 class GameHandler
 {
    public:
+      /// <summary>
+      /// Constructor for the GameHandler class.
+      /// Initializes the game state and input to default values, and sets the number of pellets to zero.
+      /// Also initializes the game window pointer to NULL.
+      /// </summary>
       GameHandler();
+
+      /// <summary>
+      /// Constructor for the GameHandler class that takes a pointer to a RenderWindow as an argument.
+      /// </summary>
+      /// <param name="window"></param>
       explicit GameHandler(RenderWindow* window);
+
+      /// <summary>
+      /// Destructor for the GameHandler class.
+      /// </summary>
       ~GameHandler();
 
+      /// <summary>
+      /// Update method for the GameHandler class.
+      /// </summary>
       void Update();
+
+      /// <summary>
+      /// Draw method for the GameHandler class.
+      /// </summary>
       void Draw();
 
    private:
@@ -34,7 +60,7 @@ class GameHandler
       int m_nrOfPellets;
 
       RenderWindow* m_gameWindow;
-      Font m_font;
+//      Font m_font;
       Texture m_bgTexture;
       Sprite m_bgSprite;
       SoundBuffer m_pelletsBuffer;
@@ -44,9 +70,10 @@ class GameHandler
       Clock m_currentClock;
       GAMESTATE m_gameState;
       SnakeHandler m_snakeHand;
-      ScoreHandler m_scoreHandler;
+//      ScoreHandler m_scoreHandler;
       Pellets* m_pellets[10];
       SnakeHandler::INPUT m_input;
+      Panel m_scorePanel;
 
       void loadResource();
 
